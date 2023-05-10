@@ -13,9 +13,6 @@ export default function App() {
       .then((users) => setRobots(users));
   }, []);
 
-  if (!filteredRobots.length) {
-    return <h1>Loading...</h1>;
-  }
   function handleSearchChange(e) {
     const searchField = e.target.value;
     const filtered = robots.filter((robot) =>
@@ -23,6 +20,7 @@ export default function App() {
     );
     setRobots(filtered);
   }
+
   return (
     <div className="text-center flex items-center flex-col ">
       <h1 className=" font-bold  text-white text-6xl m-5">RoboFriends</h1>
